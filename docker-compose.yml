@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: hashcat-benchmark  # Use a custom name for the built image (optional)
+    ports:
+      - "5000:5000"  # Map port 5000 of the container to port 5000 on the host
+    runtime: nvidia  # This enables GPU support with NVIDIA runtime
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all  # Make all available GPUs visible to the container
+    volumes:
+      - /usr/local/bin/nvidia-smi:/usr/local/bin/nvidia-smi  # Ensure nvidia-smi is available inside the container

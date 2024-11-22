@@ -1,0 +1,7 @@
+swan-sdk
+fastapi
+uvicorn
+asgiref
+urllib3
+chardet
+a2wsgi
